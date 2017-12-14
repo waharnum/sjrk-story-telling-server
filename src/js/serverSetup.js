@@ -43,8 +43,13 @@ fluid.defaults("sjrk.storyTelling.server", {
                             "root": "./ui"
                         }
                     },
-                    multer: {
-                        type: "kettle.middleware.multer"
+                    saveImage: {
+                        type: "kettle.middleware.multer",
+                        options: {
+                            middlewareOptions: {
+                                dest: "./images"
+                            }
+                        }
                     }
                 }
             }

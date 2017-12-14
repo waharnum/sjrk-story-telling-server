@@ -65,7 +65,7 @@ fluid.defaults("sjrk.storyTelling.server.saveImageHandler", {
     gradeNames: "kettle.request.http",
     requestMiddleware: {
         "multer": {
-            middleware: "{server}.multer"
+            middleware: "{server}.saveImage"
         }
     },
     invokers: {

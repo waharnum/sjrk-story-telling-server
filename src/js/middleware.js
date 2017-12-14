@@ -20,9 +20,13 @@ fluid.defaults("kettle.middleware.multer", {
 });
 
 kettle.middleware.multer.createMiddleware = function (middlewareOptions) {
-    console.log("kettle.middleware.multer.createMiddleware");
-    var memoryStorage = multer.memoryStorage();
-    middlewareOptions.storage = memoryStorage;
+    var diskStorage = multer.diskStorage({
+        destination: "./images",
+        filename: function (req, file, cb) {
+            cb(null, file.originalname);
+        }
+    });
+    middlewareOptions.storage = diskStorage;
     var upload = multer(middlewareOptions);
     return upload.single('file');
 };
