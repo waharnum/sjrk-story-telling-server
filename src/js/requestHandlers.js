@@ -60,3 +60,25 @@ fluid.defaults("sjrk.storyTelling.server.uiHandler", {
         }
     }
 });
+
+fluid.defaults("sjrk.storyTelling.server.saveImageHandler", {
+    gradeNames: "kettle.request.http",
+    requestMiddleware: {
+        "multer": {
+            middleware: "{server}.multer"
+        }
+    },
+    invokers: {
+        handleRequest: {
+            funcName: "sjrk.storyTelling.server.handleSaveImageRequest",
+            args: ["{request}"]
+        }
+    }
+});
+
+sjrk.storyTelling.server.handleSaveImageRequest = function (request) {
+    console.log(request.req.file)
+    request.events.onSuccess.fire({
+    message: "POST request received for image"
+    });
+};

@@ -14,6 +14,7 @@ require("kettle");
 require("./src/js/staticHandlerBase");
 require("./src/js/nodeModuleMounter");
 require("./src/js/dataSource");
+require("./src/js/middleware");
 require("./src/js/serverSetup");
 require("./src/js/requestHandlers");
 

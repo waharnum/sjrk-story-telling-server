@@ -42,6 +42,9 @@ fluid.defaults("sjrk.storyTelling.server", {
                         options: {
                             "root": "./ui"
                         }
+                    },
+                    multer: {
+                        type: "kettle.middleware.multer"
                     }
                 }
             }
@@ -71,6 +74,11 @@ fluid.defaults("sjrk.storyTelling.server.app.storyTellingHandlers", {
             type: "sjrk.storyTelling.server.uiHandler",
             "route": "/*",
             "method": "get"
+        },
+        saveImageHandler: {
+            type: "sjrk.storyTelling.server.saveImageHandler",
+            "route": "/image/:id",
+            "method": "post"
         }
     }
 });
