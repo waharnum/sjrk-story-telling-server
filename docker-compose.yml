@@ -12,7 +12,7 @@ services:
       - "db"
   dbconfig:
     build: .
-    entrypoint: "node ./src/js/db/dbSetup.js"
+    entrypoint: "scripts/dbSetup.sh"
     environment:
       - COUCHDB_URL=http://db:5984
     links:
