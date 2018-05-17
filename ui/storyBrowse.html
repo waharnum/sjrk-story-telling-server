@@ -112,6 +112,18 @@
         });
 
     });
+
+    var uio = fluid.uiOptions.prefsEditor(".flc-prefsEditor-separatedPanel", {
+        terms: {
+            "templatePrefix": "/node_modules/infusion/src/framework/preferences/html",
+            "messagePrefix": "/node_modules/infusion/src/framework/preferences/messages"
+        },
+        "tocTemplate": "/node_modules/infusion/src/components/tableOfContents/html/TableOfContents.html",
+        "ignoreForToC": {
+            "overviewPanel": ".flc-overviewPanel"
+        }
+    });
+
 </script>
 
 </body>
